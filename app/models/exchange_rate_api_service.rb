@@ -1,5 +1,7 @@
 require 'net/http'
 
+# A wrapper class for the free currency conversion api.
+# API key is stored in the credentials file.
 class ExchangeRateApiService
   ENDPOINT = 'https://free.currconv.com/api/v7/convert'
 

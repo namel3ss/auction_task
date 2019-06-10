@@ -1,3 +1,5 @@
+# A concern that adds a currency enumeration to a model.
+# The model is expected to have a currency attribute/column.
 module HasCurrency
   extend Enumerize
 
