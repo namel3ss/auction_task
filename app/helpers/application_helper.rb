@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def convert_item_price(item)
-    rate = @current_user.exchange_rate_from(item.currency)
-    (rate * item.price).round(2)
+  def convert_bid_price(bid)
+    rate = @current_user.exchange_rate_from(bid.currency)
+    (rate * bid.price).round(2)
   end
 
-  def display_item_price(item)
-    "#{convert_item_price(item)} #{@current_user.currency.text}"
+  def display_bid_price(bid)
+    "#{convert_bid_price(bid)} #{@current_user.currency.text}"
   end
 end

@@ -1,5 +1,5 @@
 class AuctionItem < ApplicationRecord
-  extend Enumerize
+  include HasCurrency
 
-  enumerize :currency, in: { eur: 0, gbp: 1, usd: 2, sek: 3 }
+  has_many :bids, dependent: :destroy
 end

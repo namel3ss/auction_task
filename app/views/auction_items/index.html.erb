@@ -3,16 +3,17 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Current price</th>
+      <th scope="col">Last bid</th>
       <th scope="col">Bids count</th>
     </tr>
   </thead>
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <% bids_count = item.bids.size %>
         <td><%= link_to item.name, auction_item_path(item.id) %></td>
-        <td><%= display_item_price(item) %></td>
-        <td><%= 0 %></td>
+        <td><%= bids_count > 0 ? display_bid_price(item.bids.by_date.first) : 'No bids' %></td>
+        <td><%= bids_count %></td>
       </tr>
     <% end %>
   </tbody>

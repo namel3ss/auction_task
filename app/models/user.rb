@@ -1,10 +1,15 @@
 class User < ApplicationRecord
-  extend Enumerize
+  include HasCurrency
 
-  enumerize :currency, in: { eur: 0, gbp: 1, usd: 2, sek: 3 }
+  has_many :bids, dependent: :destroy
 
   def exchange_rate_from(cur)
     @ex_rate_storage ||= ExchangeRateStorage.new(currency)
     @ex_rate_storage.from(cur)
+  end
+
+  def exchange_rate_to(cur)
+    @ex_rate_storage ||= ExchangeRateStorage.new(currency)
+    @ex_rate_storage.to(cur)
   end
 end

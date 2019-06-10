@@ -1,6 +1,28 @@
 <h1><%= @item.name %></h1>
 <p><%= @item.description %></p>
-<p>Price: <%= display_item_price(@item)
+<br />
+<br />
+<h2>Make a bid</h2>
+<%= simple_form_for @bid, url: bid_auction_item_path(@item) do |f| %>
+  <%= f.input :price, label: false %>
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %>
 <br />
 <br />
 <h2>Bids</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @item.bids.with_user.by_date.each do |bid| %>
+      <tr>
+        <td><%= bid.user.name %></td>
+        <td><%= display_bid_price(bid) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
