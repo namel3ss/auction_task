@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Price</th>
+      <th scope="col">Current price</th>
       <th scope="col">Bids count</th>
     </tr>
   </thead>
@@ -11,7 +11,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= link_to item.name, auction_item_path(item.id) %></td>
-        <td><%= item.price %></td>
+        <td><%= display_item_price(item) %></td>
         <td><%= 0 %></td>
       </tr>
     <% end %>
