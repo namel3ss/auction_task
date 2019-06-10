@@ -1,24 +1,15 @@
-# README
+# AUCTION TASK
+A small web app taking on the real-time currency conversion in the context of bidding for auction items.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## RUNNING THE APP
+To run the app, do the following:
+- Clone the repo
+- Run rails `db:setup`
+- Run rails `db:seed`
+- Start the server with `rails s`
+- Open the app at `http://localhost:3000`
 
-Things you may want to cover:
+## RUNNING THE TEST
+The app uses rspec as a test framework. Run `rspec` to start the test suite. Currently only the `ExchangeRateStorage` class is covered.
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
