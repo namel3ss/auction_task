@@ -2,5 +2,6 @@
 <%= simple_form_for @current_user do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
+  <%= f.input :currency, as: :select %>
   <%= f.button :submit, class: 'btn-primary' %>
 <% end %>
