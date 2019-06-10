@@ -1,0 +1,19 @@
+<h1>Auction Items</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Bids count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        <td><%= 0 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
