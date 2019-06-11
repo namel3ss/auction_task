@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_action :set_current_user
+  before_action :init
 
-  def set_current_user
+  def init
     @current_user = User.first
+    @exchange_rate_stroage = ExchangeRateStorage.new(@current_user.currency)
   end
 end
