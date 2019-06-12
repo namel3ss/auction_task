@@ -10,7 +10,7 @@ class AuctionItemsController < ApplicationController
   end
 
   def bid
-    rate = @exchange_rate_stroage.to(@item.currency)
+    rate = @exchange_rate_storage.to(@item.currency)
 
     @item.bids.create!(currency: @item.currency,
                        price: bid_params[:price].to_f * rate,

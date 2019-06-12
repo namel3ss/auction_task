@@ -1,6 +1,6 @@
 module ApplicationHelper
   def convert_bid_price(bid)
-    rate = @exchange_rate_stroage.from(bid.currency)
+    rate = @exchange_rate_storage.from(bid.currency)
     (rate * bid.price).round(2)
   end
 

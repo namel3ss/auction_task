@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   def init
     @current_user = User.first
-    @exchange_rate_stroage = ExchangeRateStorage.new(@current_user.currency)
+    @exchange_rate_storage = ExchangeRateStorage.new(@current_user.currency)
   end
 end
